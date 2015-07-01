@@ -2,18 +2,15 @@ add_image_handlers = ->
   ($ '#main-image').data 'selectedThumb', ($ '#main-image img').attr('src')
   ($ 'ul.thumbnails li').eq(0).addClass 'selected'
 
+  ($ '#main-image').on 'click', (event) ->
+    ($ '#main-image').data 'index', 0
+
   ($ 'ul.thumbnails a').on 'click', (event) ->
     ($ '#main-image').data 'selectedThumbId', ($ event.currentTarget).parent().attr('id')
-    ($ '#main-image').data 'index', ($ event.currentTarget).parent().index()
+    ($ '#main-image').data 'index', ($ event.currentTarget).parent().index() + 1
     false
 
-  ($ 'img.zoom-click, ul.thumbnails a').on 'click', (event) ->
-    index = ($ '#main-image').data 'index'
-    index = 0 if !index?
-    ($ '.fancybox')[index].click()
-    event.preventDefault()
-
-  ($ 'img.click-to-zoom, ul.thumbnails a').on 'click', (event) ->
+  ($ 'img.click-to-zoom, img.zoom-click, #main-image, ul.thumbnails a').on 'click', (event) ->
     index = ($ '#main-image').data 'index'
     index = 0 if !index?
     ($ '.fancybox')[index].click()
