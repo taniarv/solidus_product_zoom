@@ -1,4 +1,4 @@
-module SpreeProductZoom
+module SolidusProductZoom
   module Generators
     class InstallGenerator < Rails::Generators::Base
 
