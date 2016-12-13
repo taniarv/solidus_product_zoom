@@ -10,7 +10,7 @@ require 'ffaker'
 # in spec/support/ and its subdirectories.
 Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |f| require f }
 
-# Requires factories defined in spree_core
+# Requires factories defined in solidus_core
 require 'spree/testing_support/factories'
 require 'spree/testing_support/url_helpers'
 

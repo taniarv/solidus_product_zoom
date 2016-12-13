@@ -1,2 +1,2 @@
-require 'spree_core'
-require 'spree_product_zoom/engine'
+require 'solidus_core'
+require 'solidus_product_zoom/engine'
